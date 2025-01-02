@@ -1,0 +1,24 @@
+class Solution {
+public:
+    vector<int> vowelStrings(vector<string>& words, vector<vector<int>>& queries) {
+        vector<string> vs; // strings having vowels at first and last index
+        vector<int> ans;
+
+        //words = ["aba","bcb","ece","aa","e"], queries = [[0,2],[1,4],[1,1]]
+
+        for(int i=0; i<words.size(); i++){
+            int wordLastIndex = words[i].size()-1;
+            if((words[i][0] == 'a' || words[i][0] == 'e' || words[i][0] == 'i' || words[i][0] == 'o' || words[i][0] == 'u') && 
+            (words[i][wordLastIndex] == 'a' || words[i][wordLastIndex] == 'e' || words[i][wordLastIndex] == 'i' || words[i][wordLastIndex] == 'o' || words[i][wordLastIndex] == 'u'))
+            {
+                vs.push_back(words[i]);
+            }
+        }
+        for(auto i:vs){
+            cout << i << " ";
+        }
+
+
+        return ans;
+    }
+};
